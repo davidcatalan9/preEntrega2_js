@@ -1,8 +1,8 @@
-# PreEntrega1_JS
+# PreEntrega2_JS
 
 ## David Catalan
 ### Curso JavaScript CoderHouse
 
 # la rama principal es master, es donde estan los archivos
 
-# preEntrega2_js
+
