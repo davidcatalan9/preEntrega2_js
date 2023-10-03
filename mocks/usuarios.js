@@ -7,10 +7,8 @@ let usuariosMock = [
         email: "dcatalan@gmail.com",
         usuario: "david",
         clave: "david1975"
-
     },
     {
-
         nombre: "Ana",
         apellido: "Torroja",
         canReloj: 2,
@@ -18,7 +16,6 @@ let usuariosMock = [
         email: "anatorroja@gmail.com",
         usuario: "anita",
         clave: "torroja23"
-
     },
 
 ];

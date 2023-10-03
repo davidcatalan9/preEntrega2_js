@@ -7,8 +7,7 @@ class Usuario {
     email,
     usuario,
     clave
-    )
-{
+    ){
     this.nombre = nombre;
     this.apellido= apellido;
     this.canReloj = canReloj;

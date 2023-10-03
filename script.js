@@ -1,9 +1,8 @@
 
 let mensajesError1 = [];
 
-let usuarios = usuariosMock.map((du) => {
-    return new Usuario(
-        du.nombre, du.apellido, du.email, du.canReloj, du.totalReloj, du.usuario, du.clave)
+let usuarios = usuariosMock.map((d) => {
+    return new Usuario(d.nombre, d.apellido, d.email, d.canReloj, d.totalReloj, d.usuario, d.clave);
 });
 
 
@@ -25,29 +24,38 @@ const validarDatos = (nombre, apellido, canReloj, email, usuario, clave) => {
 };
 
 
-const grabaUsuario = (nombre = "", apellido = "", canReloj = 0, totalReloj = 0, email = "", usuario = "", clave = "") => {
+const grabaUsuario = (nombre = "", apellido = "", canReloj = 0, totalReloj = 0, email = "", usuario = "", clave = ""
+) => {
     const erroresDatos = validarDatos(nombre, apellido, canReloj, email, usuario, clave);
     if (erroresDatos.length !== 0) {
         console.table(erroresDatos);
         return false;
     }
 
-    if (!isExisteUsuario(usuarios, email)) {
+    if (!isExisteUsuario(usuarios, usuario, email)) {
         let unUsuario = new
             Usuario(nombre, apellido, canReloj, totalReloj, email, usuario, clave);
         usuariosMock.push(unUsuario);
         console.table(usuariosMock);
         return true;
     } else {
-        alert("El usuario: " + usuario + "ya existe");
+        alert("El usuario: " + usuario + " ya existe");
         return false;
     }
 
 };
 
-const isExisteUsuario = (usuarios = [], identif = "") => {
-    return usuarios.some((unUsuario) => unUsuario.email === identif);
+
+
+const isExisteUsuario = (usuarios = [], identif = "", identif2 = "") => {
+    if (!usuarios.some((unUsuario) => unUsuario.usuario === identif) &&
+        !usuarios.some((unUsuario) => unUsuario.email === identif2)) {
+        return false;
+    }
+    return true;
 };
+
+
 
 
 function listausuario(usuarios) {
@@ -78,8 +86,8 @@ let clave = "";
 
 
 while (!salir) {
-  
-    
+
+
     nombre = prompt("Ingrese su Nombre: ").trim();
     apellido = prompt("Ingrese su Apellido").trim();
     canReloj = parseInt(prompt("Ingrese Cantidad de Relojes:"));
@@ -92,8 +100,8 @@ while (!salir) {
         alert("Bienvenido: " + listausuario(usuarios))
     }
     else {
-        
-        alert("Estos Campos tienen errores: \n \n"+ mensajesError1.join("\n") )
+
+        alert("Estos Campos tienen errores: \n \n" + mensajesError1.join("\n"))
     }
 
 
