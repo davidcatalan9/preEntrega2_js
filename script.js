@@ -74,7 +74,7 @@ function listausuario(usuarios) {
 
 
 
-let salir = false;
+let salir = false;/* 
 
 let nombre = "";
 let apellido = "";
@@ -116,7 +116,7 @@ while (!salir) {
     }
 
 };
-
+ */
 
 
 
